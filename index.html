@@ -280,7 +280,7 @@
         <div class="bg-con-form">
             <div class="container mt-5">
                 <div class="row justify-content-center">
-                    <div class="col-md-6">
+<!--                     <div class="col-md-6">
                         <div class="card p-4">
                             <h3 class="text-center mb-4">Đăng Ký Nhận Tư Vấn</h3>
                             <form id="signup-form">
@@ -313,7 +313,10 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
+
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPusF96g5U4v4iid2awNYsXtugUltELwrHvYJcZqIMfGJnxg/viewform?embedded=true" width="360" height="1200" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>
+                    
                 </div>
             </div>   
         </div>       
@@ -350,35 +353,35 @@
                 });
 
                 // Xu ly lay du lieu form
-                document.getElementById("signup-form").addEventListener("submit", function(e) {
-                    e.preventDefault();
+                // document.getElementById("signup-form").addEventListener("submit", function(e) {
+                //     e.preventDefault();
                     
-                    var name = document.getElementById("name").value;
-                    var email = document.getElementById("email").value;
-                    var phone = document.getElementById("phone").value;
-                    var address = document.getElementById("address").value;
-                    var message = document.getElementById("message").value;
+                //     var name = document.getElementById("name").value;
+                //     var email = document.getElementById("email").value;
+                //     var phone = document.getElementById("phone").value;
+                //     var address = document.getElementById("address").value;
+                //     var message = document.getElementById("message").value;
 
-                    var data = {
-                        name: name,
-                        email: email,
-                        phone: phone,
-                        address: address,
-                        message: message
-                    };
+                //     var data = {
+                //         name: name,
+                //         email: email,
+                //         phone: phone,
+                //         address: address,
+                //         message: message
+                //     };
 
                 // Gửi dữ liệu đến Google Apps Script Web App
-                fetch('https://script.google.com/macros/s/AKfycbwEnn67l7k1btQhgHhMGFMd8rYDwhfKNutucUVS_SBqkaOS7Tz20aas2IXqzcOTOawo/exec', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                    .then(response => response.json())
-                    .then(data => alert('Đăng ký thành công!'))
-                    .catch(error => alert('Có lỗi xảy ra: ' + error));
-                });
+                // fetch('https://script.google.com/macros/s/AKfycbwEnn67l7k1btQhgHhMGFMd8rYDwhfKNutucUVS_SBqkaOS7Tz20aas2IXqzcOTOawo/exec', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify(data)
+                // })
+                //     .then(response => response.json())
+                //     .then(data => alert('Đăng ký thành công!'))
+                //     .catch(error => alert('Có lỗi xảy ra: ' + error));
+                // });
 
             });
             

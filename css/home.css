@@ -188,6 +188,32 @@ h5.card-title {
     height: 200px;
 }
 
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    font-size: 1.5em;
+    font-weight: bold;
+    background: linear-gradient(180deg, #90e91b, #54da1d);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
 
 
 @media (min-width: 576px) {

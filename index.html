@@ -301,19 +301,13 @@
         
         <!-- Begin Video giới thiệu -->
         <div class="container mt-4">
-            <h3 class="text-center">Giới Thiệu Công Nghệ BioLactol</h3>
-            <!-- <div class="video-container">
-                <video controls>
-                  <source src="images/video_colos_iggold.mp4" type="video/mp4">
-                  Trình duyệt của bạn không hỗ trợ video.
-                </video>
-            </div>     -->
-
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7CyDDDGPPvc?si=_qHbvUwBkxg0OuDI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-        </div>        
+          <h3 class="text-center">Giới Thiệu Công Nghệ BioLactol</h3>
+          <div class="video-container" onclick="loadVideo(this, '7CyDDDGPPvc')">
+            <img src="https://img.youtube.com/vi/7CyDDDGPPvc/hqdefault.jpg" 
+                 alt="Giới thiệu công nghệ BioLactol" 
+                 style="width: 100%; height: auto; cursor: pointer;">
+          </div>
+        </div>
         <!-- End Video -->
 
         <!-- Begin feedback -->
@@ -364,21 +358,15 @@
         </div>
         <!-- End feedback -->
 
-        <!-- Begin Video thi nghiem -->
+        <!-- Begin Video thí nghiệm -->
         <div class="container mt-4">
-            <h3 class="text-center">Thí Nghiệm Hoạt Tính Sản Phẩm</h3>
-            <!-- <div class="video-container">
-                <video controls>
-                  <source src="images/thi_nghiem_colos.mp4" type="video/mp4">
-                  Trình duyệt của bạn không hỗ trợ video.
-                </video>
-            </div> -->    
-
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/CyiJtrwLb_Y?si=aTClavXV22rLJ-GO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-        </div>        
+          <h3 class="text-center">Thí Nghiệm Hoạt Tính Sản Phẩm</h3>
+          <div class="video-container" onclick="loadVideo(this, 'CyiJtrwLb_Y')">
+            <img src="https://img.youtube.com/vi/CyiJtrwLb_Y/hqdefault.jpg" 
+                 alt="Thí nghiệm hoạt tính" 
+                 style="width: 100%; height: auto; cursor: pointer;">
+          </div>
+        </div>
         <!-- End Video -->
 
         <!-- Begin form -->
@@ -575,6 +563,19 @@
                 //     .then(data => alert('Đăng ký thành công!'))
                 //     .catch(error => alert('Có lỗi xảy ra: ' + error));
                 // });
+
+                // Xử lý video
+                function loadVideo(container, videoId) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+                    iframe.width = '560';
+                    iframe.height = '315';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    iframe.allowFullscreen = true;
+                    container.innerHTML = '';
+                    container.appendChild(iframe);
+                  }
 
             });
             

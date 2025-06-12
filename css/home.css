@@ -33,7 +33,7 @@ h5.card-title {
     max-width: 960px; /* Giới hạn kích thước tối đa */
     margin: 0 auto; /* Canh giữa */
     position: relative;
-    padding-top: 56.25%; /* 16:9 ratio (9/16 = 0.5625 = 56.25%) */
+    cusor: pointer;
 }
 .video-container video, .video-container iframe {
     position: absolute;
@@ -44,6 +44,14 @@ h5.card-title {
     object-fit: contain; /* hoặc contain, tùy bạn muốn video cắt hay giữ khung */
     border: 0;
 }
+
+/* Khi đã có iframe, giữ tỉ lệ 16:9 */
+.video-container.ratio-16by9::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* Tỷ lệ 16:9 */
+}
+
 .color_te {
     color: #54da1d;
 }
@@ -279,7 +287,6 @@ h5.card-title {
     }
     .video-container {
         width: 100%;
-        padding-top: 56.25%; /* vẫn giữ tỉ lệ 16:9 */
     }
     .wrap_feeds {
         width: 100%;

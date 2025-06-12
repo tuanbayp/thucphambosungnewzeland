@@ -302,7 +302,7 @@
         <!-- Begin Video giới thiệu -->
         <div class="container mt-4">
           <h3 class="text-center">Giới Thiệu Công Nghệ BioLactol</h3>
-          <div class="video-container" onclick="loadVideo(this, '7CyDDDGPPvc')">
+          <div class="video-container" data-video-src="https://www.youtube.com/embed/7CyDDDGPPvc?si=_qHbvUwBkxg0OuDI">
             <img src="https://img.youtube.com/vi/7CyDDDGPPvc/hqdefault.jpg" 
                  alt="Giới thiệu công nghệ BioLactol" 
                  style="width: 100%; height: auto; cursor: pointer;">
@@ -361,7 +361,7 @@
         <!-- Begin Video thí nghiệm -->
         <div class="container mt-4">
           <h3 class="text-center">Thí Nghiệm Hoạt Tính Sản Phẩm</h3>
-          <div class="video-container" onclick="loadVideo(this, 'CyiJtrwLb_Y')">
+          <div class="video-container" data-video-src="https://www.youtube.com/embed/CyiJtrwLb_Y?si=aTClavXV22rLJ-GO">
             <img src="https://img.youtube.com/vi/CyiJtrwLb_Y/hqdefault.jpg" 
                  alt="Thí nghiệm hoạt tính" 
                  style="width: 100%; height: auto; cursor: pointer;">
@@ -564,10 +564,17 @@
                 //     .catch(error => alert('Có lỗi xảy ra: ' + error));
                 // });
 
-                // Xử lý video
-                function loadVideo(container, videoId) {
+            });
+            
+        </script>
+
+        <script>
+             document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll('.video-container').forEach(container => {
+                  const videoSrc = container.getAttribute('data-video-src');
+                  container.addEventListener('click', function () {
                     const iframe = document.createElement('iframe');
-                    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+                    iframe.src = videoSrc + '&autoplay=1';
                     iframe.width = '560';
                     iframe.height = '315';
                     iframe.frameBorder = '0';
@@ -575,10 +582,9 @@
                     iframe.allowFullscreen = true;
                     container.innerHTML = '';
                     container.appendChild(iframe);
-                  }
-
-            });
-            
+                  });
+                });
+              });
         </script>
 
     </body>

@@ -33,7 +33,7 @@ h5.card-title {
     max-width: 960px; /* Giới hạn kích thước tối đa */
     margin: 0 auto; /* Canh giữa */
     position: relative;
-    cusor: pointer;
+    cursor: pointer;
 }
 .video-container video, .video-container iframe {
     position: absolute;

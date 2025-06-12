@@ -575,11 +575,11 @@
                   container.addEventListener('click', function () {
                     const iframe = document.createElement('iframe');
                     iframe.src = videoSrc + '&autoplay=1';
-                    iframe.width = '560';
-                    iframe.height = '315';
-                    iframe.frameBorder = '0';
                     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
                     iframe.allowFullscreen = true;
+            
+                    // Thêm class giữ tỉ lệ 16:9 khi đã load video
+                    container.classList.add('ratio-16by9');
                     container.innerHTML = '';
                     container.appendChild(iframe);
                   });

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tuanbayp.github.io/thucphambosungnewzeland/sitemap.xml
